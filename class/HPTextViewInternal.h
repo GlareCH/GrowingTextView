@@ -34,4 +34,6 @@
 @property (nonatomic, strong) UIColor *placeholderColor;
 @property (nonatomic) BOOL displayPlaceHolder;
 
+@property (nonatomic, weak) UIResponder *overrideNextResponder;//用来改写事件传递链
+
 @end

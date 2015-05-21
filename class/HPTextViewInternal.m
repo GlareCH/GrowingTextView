@@ -123,4 +123,25 @@
 	[self setNeedsDisplay];
 }
 
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (_overrideNextResponder != nil) {
+        return NO;
+    }
+    else {
+        BOOL result = [super canPerformAction:action withSender:sender];
+        return result;
+    }
+}
+
+- (UIResponder *)nextResponder
+{
+    if (_overrideNextResponder != nil) {
+        return _overrideNextResponder;
+    }
+    else {
+        return [super nextResponder];
+    }
+}
+
 @end
