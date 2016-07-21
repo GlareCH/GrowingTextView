@@ -144,4 +144,11 @@
     }
 }
 
+#ifdef DEBUG
+// http://stackoverflow.com/questions/37068231/assertion-failure-in-uitextview-firstbaselineoffsetfromtop
+// xcode 7.3 UI
+- (void)_firstBaselineOffsetFromTop {}
+- (void)_baselineOffsetFromBottom {}
+#endif
+
 @end
