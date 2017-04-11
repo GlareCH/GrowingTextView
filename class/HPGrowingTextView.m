@@ -275,6 +275,10 @@
         if (newSizeH >= maxHeight)
         {
             if(!internalTextView.scrollEnabled){
+                [self resizeTextView:newSizeH];
+                if ([delegate respondsToSelector:@selector(growingTextView:didChangeHeight:)]) {
+                    [delegate growingTextView:self didChangeHeight:newSizeH];
+                }
                 internalTextView.scrollEnabled = YES;
                 [internalTextView flashScrollIndicators];
             }
